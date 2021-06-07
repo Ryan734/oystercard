@@ -1,6 +1,6 @@
 ## Oyster card challenge
 
-### planning
+### Planning
 
 ```
 In order to use public transport
@@ -8,5 +8,14 @@ As a customer
 I want money on my card
 ```
 
-Class: Oystercard
-Variable: @balance (= 0)
+- Class: Oystercard
+- Variable: @balance (@balance = 0)
+
+```
+In order to keep using public transport
+As a customer
+I want to add money to my card
+```
+
+- Class: Oystercard
+- Method: top_up(money)

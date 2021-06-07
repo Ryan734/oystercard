@@ -1,3 +1,5 @@
+MAX_LIMIT = 90
+
 class Oystercard
   attr_reader :balance
 
@@ -6,6 +8,7 @@ class Oystercard
   end
 
   def top_up(money)
+    raise "Pound 90 limit reached!" if @balance >= MAX_LIMIT
     @balance += money
   end
 end

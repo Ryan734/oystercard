@@ -19,3 +19,13 @@ I want to add money to my card
 
 - Class: Oystercard
 - Method: top_up(money)
+
+```
+In order to protect my money from theft or loss
+As a customer
+I want a maximum limit (of £90) on my card
+```
+
+- Class: Oystercard
+- Method: top_up
+- 

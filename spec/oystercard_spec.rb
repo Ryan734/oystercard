@@ -24,4 +24,27 @@ describe Oystercard do
       expect { subject.deduct 10 }.to change { subject.balance }.by -10
     end
   end
+    it 'is initially not in a journey' do
+      expect(subject).not_to be_in_journey
+    end
+
+    it "can touch in" do
+        subject.touch_in
+        expect(subject).to be_in_journey
+  end
+
+    it "needs to touch out" do
+      subject.touch_in
+      subject.touch_out
+      expect(subject).not_to be_in_journey
+    end
+
+    it "no entry" do
+      minimum = Oystercard::MINIMUM
+      error_msg = "Minimum fare #{minimum} required!"
+      subject.top_up(minimum)
+      expect { subject.touch_in }.to raise_error(error_msg)
+    end
+
+
 end
